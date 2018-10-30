@@ -12,6 +12,7 @@ RUN mkdir -p /usr/local/java \
 COPY ./jdk-${JAVA_VERSION}-linux-x64.tar.gz /tmp
 COPY ./Anaconda3-${CONDA_VERSION}-Linux-x86_64.sh /tmp
 COPY ./scala-${SCALA_VERSION}.tgz /tmp
+COPY ./.vimrc /root
 
 RUN apt-get update \
  && apt-get install -y \
@@ -23,6 +24,7 @@ RUN apt-get update \
             unzip \
             flex \
             bison \
+            vim \
             golang-go
 
 # setup anaconda & java & scala
