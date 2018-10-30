@@ -9,3 +9,10 @@ download the setup files(zookeeper, spark, hadoop) and mv into this directory
 extend from the base, so should build the base image at first
 
 
+Download files
+
+hadoop-2.7.7.tar.gz
+
+zookeeper-3.4.13.tar.gz
+
+spark-2.3.2-bin-hadoop2.7.tgz
