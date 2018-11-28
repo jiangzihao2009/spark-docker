@@ -2,8 +2,7 @@ FROM ubuntu:18.04
 
 ENV JAVA_VERSION=8u191
 ENV CONDA_VERSION=5.3.0
-ENV SCALA_VERSION=2.12.7
-
+ENV SCALA_VERSION=2.12.7 
 ENV JAVA_DIR=jdk1.8.0_191
 
 RUN mkdir -p /usr/local/java \
@@ -25,7 +24,8 @@ RUN apt-get update \
             flex \
             bison \
             vim \
-            golang-go
+            golang-go \
+            maven
 
 # setup anaconda & java & scala
 RUN apt-get clean \
