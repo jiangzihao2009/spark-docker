@@ -4,6 +4,7 @@ ENV JAVA_VERSION=8u191
 ENV CONDA_VERSION=5.3.0
 ENV SCALA_VERSION=2.12.7 
 ENV JAVA_DIR=jdk1.8.0_191
+ENV ZOOKEEPER_VERSION=3.4.13
 
 RUN mkdir -p /usr/local/java \
  && mkdir -p /usr/local/scala
@@ -25,7 +26,9 @@ RUN apt-get update \
             bison \
             vim \
             golang-go \
-            maven
+            maven \
+            net-tools \
+            inetutils-ping
 
 # setup anaconda & java & scala
 RUN apt-get clean \
@@ -43,5 +46,5 @@ RUN apt-get clean \
 # set the enviroment variables
  ENV JAVA_HOME "/usr/local/java"
  ENV CLASS_PATH "${JAVA_HOME}/jre/lib:${JAVA_HOME}/lib"
- ENV PATH "${JAVA_HOME}/bin:/usr/local/scala/bin:/usr/local/anaconda/bin:$PATH"
+ ENV PATH "${JAVA_HOME}/bin:/usr/local/scala/bin:/usr/local/anaconda/bin:/usr/local/zookeeper/bin:$PATH"
 
