@@ -6,8 +6,7 @@ ENV SCALA_VERSION=2.12.7
 ENV JAVA_DIR=jdk1.8.0_191
 ENV ZOOKEEPER_VERSION=3.4.13
 
-RUN mkdir -p /usr/local/java \
- && mkdir -p /usr/local/scala
+RUN mkdir -p /usr/local/java \ && mkdir -p /usr/local/scala
 
 COPY ./jdk-${JAVA_VERSION}-linux-x64.tar.gz /tmp
 COPY ./Anaconda3-${CONDA_VERSION}-Linux-x86_64.sh /tmp
@@ -28,7 +27,11 @@ RUN apt-get update \
             golang-go \
             maven \
             net-tools \
-            inetutils-ping
+            inetutils-ping \
+            tree \
+            netcat \
+            rsync \
+            openssh-server
 
 # setup anaconda & java & scala
 RUN apt-get clean \
